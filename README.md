@@ -56,6 +56,16 @@ module half_adder (
     assign carry = a & b;   // AND for carry
 
 endmodule
+module full_subtractor (
+    input  wire a, b, bin,       // Inputs
+    output wire diff, borrow     // Outputs
+);
+
+    // Logic equations
+    assign diff   = a ^ b ^ bin;                  // Difference
+    assign borrow = (~a & b) | (~(a ^ b) & bin);  // Borrow logic
+
+endmodule
 
 ```
 
@@ -66,11 +76,13 @@ endmodule
 
 <img width="841" height="201" alt="image" src="https://github.com/user-attachments/assets/13a9bbbc-53ad-4ca8-a28e-2a23158560eb" />
 
+<img width="1308" height="461" alt="Screenshot 2025-11-21 142128" src="https://github.com/user-attachments/assets/d87639dd-e984-48a1-a5a6-39f33d10cb4a" />
 
 **Output Timing Waveform**
 
 <img width="938" height="384" alt="image" src="https://github.com/user-attachments/assets/3118a614-4a77-4f03-b0ef-decbe880dd0c" />
 
+<img width="1920" height="1080" alt="Screenshot 2025-11-21 142508" src="https://github.com/user-attachments/assets/25b6ffa2-e3f8-4e06-9901-04928021e93f" />
 
 **Result:**
 
